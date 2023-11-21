@@ -11,8 +11,10 @@ public class GroceryStoreTest {
         GroceryStore store = new GroceryStore(10);
 
         // Test the initial size and elements
-        assertEquals(10, store.items.length);
-        assertEquals(0, store.size);
+        assertEquals(10, store.getItems().length); //Sean Standen - Peer Review
+        //Updated to getter method since variable is private.
+        assertEquals(0, store.getSize()); //Sean Standen - Peer Review
+        //Updated to getter method since variable is private.
 
         // Test adding and getting items
         GroceryItem item1 = new GroceryItem("Item1", 1.99);
@@ -29,9 +31,11 @@ public class GroceryStoreTest {
 
         // Test expanding and shrinking the array
         store.expand(20);
-        assertEquals(20, store.items.length);
+        assertEquals(20, store.getItems().length); //Sean Standen - Peer Review
+        //Updated to getter method since variable is private.
         store.shrink(5);
-        assertEquals(5, store.items.length);
+        assertEquals(5, store.getItems().length); //Sean Standen - Peer Review
+        //Updated to getter method since variable is private.
 
     }
 
@@ -85,7 +89,9 @@ public class GroceryStoreTest {
 
         assertTrue(results.startsWith("Iceberg Lettuce, $1.99, Not Organic"));
         assertTrue(results.contains("Medium Hass Avocado, $1.00, Not Organic"));
-        assertTrue(results.endsWith("Blood Orange, $2.99, Not Organic"));
+        //Sean Standen - Peer Review
+        //This endsWith was the wrong item according to the list being printed above.
+        assertTrue(results.endsWith("Baby Bella Mushroom, $2.99, Organic"));
     }
 
     @Test
