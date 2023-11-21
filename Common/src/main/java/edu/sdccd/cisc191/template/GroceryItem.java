@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class GroceryItem {
-    public String name;
-    public double price;
+
+    //Sean Standen - Peer Review
+    //Made both instance variables private so that they aren't accessible directly outside the
+    //class without calling the getter and setter methods.
+    private String name;
+    private double price;
 
 
     public GroceryItem(String name, double price) {
@@ -26,8 +30,8 @@ public class GroceryItem {
     @Override
     public String toString() {
         return "GroceryItem{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
+                "name='" + this.name + '\'' +
+                ", price=" + this.price +
                 '}';
     }
 
@@ -60,6 +64,6 @@ public class GroceryItem {
 
     public int compareTo(GroceryItem otherItem) {
         // Compare items based on their names
-        return this.name.compareTo(otherItem.name);
+        return this.name.compareTo(otherItem.getName());
     }
 }
